@@ -14,8 +14,15 @@ public class Main {
 	    LazySingleton lazySingleton = LazySingleton.getInstance();
 
 	    // Construct Patterns
-		//HelperClass helper = HelperClass.helperMethod1();
-		//helper.
+		constructPatterns();
+	}
+	
+	void constructPatterns(){
+		int a = 37;
+		int b = 39;
 
-    }
+		// HelperClass
+		System.out.println(a + " is prime: " + HelperClass.isPrime(a));
+		System.out.println(b + " is prime: " + HelperClass.isPrime(b));	
+	}
 }

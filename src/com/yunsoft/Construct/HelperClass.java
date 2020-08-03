@@ -2,14 +2,18 @@ package com.yunsoft.Construct;
 
 public class HelperClass {
     private HelperClass() {
-        System.out.println("HelperClass was created.");
     }
 
-    public static void helperMethod1(){
-        System.out.println("helperMethod1 was invoked.");
-    }
-
-    public static void helperMethod2(){
-        System.out.println("helperMethod2 was invoked.");
-    }
+    public static boolean isPrime(int n) {
+        if (n == 2) {
+           return true;
+        }
+        int squareRoot = (int)Math.sqrt(n);
+        for (int i = 1; i <= squareRoot; i++) {
+           if (n % i == 0 && i != 1) {
+              return false;
+           }
+           return true;
+        }
+     }
 }
