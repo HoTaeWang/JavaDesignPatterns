@@ -8,4 +8,5 @@
  * LazySingleton
   
 #### Construct Pattern 
+ * HelperClass
 
