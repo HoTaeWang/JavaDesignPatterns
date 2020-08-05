@@ -16,6 +16,8 @@ public class Main {
 
 	    // Construct Patterns
 		constructPatterns();
+		System.out.println("=========== Factory Pattern =========== ");
+		shapeFactoryPatternDemo();
 	}
 	
 	private static void constructPatterns(){
@@ -34,4 +36,18 @@ public class Main {
 		}
 		System.out.println(" 5th Prime Number = " + HelperClass.nthPrimeNumber(5));
 	}
+
+	private static void shapeFactoryPatternDemo(){
+		ShapeFactory shapeFactory = new ShapeFactory();
+
+		Shape shape1 = shapeFactory.getShape("CIRCLE");
+		shape1.draw();
+
+		Shape shape2 = shapeFactory.getShape("RECTANGLE");
+		shape2.draw();
+
+		Shape shape3 = shapeFactory.getShape("SQUARE");
+		shape3.draw();
+	}
+
 }
