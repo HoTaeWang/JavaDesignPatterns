@@ -1,6 +1,7 @@
 package com.yunsoft;
 
 import com.yunsoft.Construct.*;
+import com.yunsoft.Construct.AbstractFactory.*;
 import com.yunsoft.Singleton.*;
 
 public class Main {
@@ -17,7 +18,9 @@ public class Main {
 	    // Construct Patterns
 		constructPatterns();
 		System.out.println("=========== Factory Pattern =========== ");
+		System.out.println("provides an interface for creating families of related\n objects without specifying their concreate classes.");
 		shapeFactoryPatternDemo();
+		abstractFactoryDesignPatternDemo();
 	}
 	
 	private static void constructPatterns(){
@@ -48,6 +51,21 @@ public class Main {
 
 		Shape shape3 = shapeFactory.getShape("SQUARE");
 		shape3.draw();
+	}
+
+	private static void abstractFactoryDesignPatternDemo(){
+		AbstractFactory abstractFactory;
+
+		System.out.println("Abstract Factory Pattern");
+		// create a Brown Toy Dog
+		abstractFactory = FactoryProvider.getFactory("Toy");
+		Animal animal = (Animal)abstractFactory.create("Dog");
+
+		abstractFactory = FactoryProvider.getFactory("Color");
+		Color color = (Color) abstractFactory.create("Brown");
+
+		String result = "A " + animal.getType() + " with " + color.getColor() + " color " + animal.makeSound();
+		System.out.println(result);
 	}
 
 }
