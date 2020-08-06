@@ -9,4 +9,7 @@
   
 #### Construct Pattern 
  * HelperClass
+ * Factory Pattern 
+ * Abstract Factory Pattern
+
 
